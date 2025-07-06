@@ -1,0 +1,64 @@
+local function log(text)
+    if Config.Debug then
+        print("[GiftScript]: " .. tostring(text))
+    end
+end
+function moveToPlayer(playerName)
+    local Players = game:GetService("Players")
+    local target = Players:FindFirstChild(playerName)
+    if not target or not target.Character or not target.Character:FindFirstChild("HumanoidRootPart") then
+        warn("Không tìm thấy người nhận hoặc chưa tải xong.")
+        return false
+    end
+    local myChar = Players.LocalPlayer.Character
+    if myChar and myChar:FindFirstChild("HumanoidRootPart") then
+        myChar:MoveTo(target.Character.HumanoidRootPart.Position + Vector3.new(2, 0, 0))
+        return true
+    end
+    return false
+end
+function getAllFruits()
+    local fruitStorage = game.Players.LocalPlayer:FindFirstChild("Backpack") or game.Players.LocalPlayer:WaitForChild("Backpack")
+    local fruits = {}
+    for _, item in pairs(fruitStorage:GetChildren()) do
+        if item:IsA("Tool") and string.find(item.Name:lower(), "fruit") then
+            table.insert(fruits, item)
+        end
+    end
+    return fruits
+end
+function giftFruit(fruitTool, target)
+    if not fruitTool then return end
+    local humanoid = game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid")
+    if humanoid then
+        humanoid:EquipTool(fruitTool)
+        wait(0.2)
+    end
+    local parts = string.split(Config.GiftEventPath, ".")
+    local obj = game
+    for _, part in pairs(parts) do
+        obj = obj:FindFirstChild(part)
+        if not obj then
+            warn("Không tìm thấy Event: " .. Config.GiftEventPath)
+            return
+        end
+    end
+
+    obj:FireServer(fruitTool, target)
+    log("Đã gift: " .. fruitTool.Name)
+    wait(Config.GiftDelay)
+end
+function giftAllFruitsToTarget()
+    if not moveToPlayer(Config.TargetPlayer) then return end
+    wait(Config.MoveDelay)
+
+    local fruits = getAllFruits()
+    while #fruits > 0 do
+        for _, fruit in pairs(fruits) do
+            giftFruit(fruit, Config.TargetPlayer)
+        end
+        fruits = getAllFruits()
+    end
+    log("Đã gửi hết trái")
+end
+giftAllFruitsToTarget()
