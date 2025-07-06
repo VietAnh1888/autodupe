@@ -1,7 +1,3 @@
-local TARGET_NAME = "test13fas"
-local HOLD_TIME = 0.3  -- giữ E
-local NEXT_DELAY = 0.05 -- delay giữa trái
-
 local Players = game.Players
 local player = Players.LocalPlayer
 local char = player.Character or player.CharacterAdded:Wait()
