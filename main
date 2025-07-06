@@ -10,7 +10,6 @@ local function moveTo(target)
 end
 for _, tool in ipairs(backpack:GetChildren()) do
     if tool:IsA("Tool") then
-        -- Trang bị
         char:FindFirstChildOfClass("Humanoid"):EquipTool(tool)
         wait(0.1)
         local tgt = Players:FindFirstChild(TARGET_NAME)
