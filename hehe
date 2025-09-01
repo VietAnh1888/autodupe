@@ -51,8 +51,16 @@ getgenv().ConfigsKaitun = {
 			}
 		},
 		Place = {
-			Mode = "Lock", -- Select , Lock                                                                
+			Mode = "Lock", -- Select , Lock
             Select = {
+				"Blueberry",
+				"Strawberry",
+				"Apple",
+				"Coconut",
+				"Dragon Fruit",
+				"Mango",
+				"Tomato",
+				"Cactus",
 			},
 			Lock = {
 				"Maple Apple",
@@ -75,7 +83,7 @@ getgenv().ConfigsKaitun = {
 	},
 
 	Events = {
-                                       ["Fairy Event"] = {
+            ["Fairy Event"] = {
 			Minimum_Money = 10_000_000, -- minimum money to start play this event
 			Rewards_Item = {
 				"Pet Shard Glimmering",
@@ -139,7 +147,7 @@ getgenv().ConfigsKaitun = {
 
 	Eggs = {
 		Place = {
-			"Enchanted Egg",
+            "Enchanted Egg",
 			"Gourmet Egg",
 			"Sprout Egg",
 		},
@@ -181,8 +189,8 @@ getgenv().ConfigsKaitun = {
 			"Kitsune",
 			"Corrupted Kitsune",
 			"French Fry Ferret",
-                                                               "Lobster Thermidor",
-                                                               "Golden Goose",
+            "Lobster Thermidor",
+            "Golden Goose",
 			"Griffin",
 			"Cockatrice",
 			["Seal"] = 8,
@@ -237,9 +245,9 @@ getgenv().ConfigsKaitun = {
 				"Raccoon",
 				"Red Fox",
 				"French Fry Ferret",
-                                                                                     "Golden Goose",
-			                     "Griffin",
-			                     "Cockatrice",
+                "Golden Goose",
+			    "Griffin",
+			    "Cockatrice",
 			},
 			Pet_Weight_Noti = true,
 		}
